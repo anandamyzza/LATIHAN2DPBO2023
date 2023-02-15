@@ -1,52 +1,83 @@
+import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Main
-{
-    public static void main(String[] args)
-    {
-        // Deklarasi dan Inisialisasi variabel.
-        Mahasiswa temp = new Mahasiswa();
+public class Main {
+    public static void main(String[] args) {
         ArrayList<Mahasiswa> list = new ArrayList<>();
+        CRUD crud = new CRUD(list);
+        int operation, index;
+        String name, NIK, NIM, univ, major, faculty, email, gender, find;
+        Scanner scanner = new Scanner(System.in);
 
-        // Input hard code data mahasiswa 1.
-        temp.setNIK("5351309030007");
-        temp.setName("Ananda Myzza");
-        temp.setGender('L');
-        temp.setAsal_universitas("UPI");
-        temp.setEmail_edu("anandamyzza@upi.edu");
-        temp.setNIM("2100702");
-        temp.setMajor("Ilmu Komputer");
-        temp.setFaculty("FPMIPA");
-        list.add(temp); // Add data ke dalam list.
+        // prompt the user for CRUD operations
+        do {
+            System.out.print("Choose an operation (1: create, 2: read, 3: update, 4: delete, 5: exit): ");
+            operation = scanner.nextInt();
 
-        // Input hard code data mahasiswa 2.
-        temp = new Mahasiswa(); // Reset mahasiswa.
-        temp.setNIK("5352007030006");
-        temp.setName("Dicky Fathurohman");
-        temp.setGender('L');
-        temp.setAsal_universitas("UPI");
-        temp.setEmail_edu("dickifathurohman@upi.edu");
-        temp.setNIM("2103842");
-        temp.setMajor("Ilmu Komputer");
-        temp.setFaculty("FPMIPA");
-        list.add(temp); // Add data ke dalam list.
-
-        // Print Hasil Akhir Daftar Data Mahasiswa.
-        System.out.println("Data Mahasiswa:\n");
-        for(int i = 0; i < list.size(); i++)
-        {
-            System.out.println(Integer.toString(i + 1) + ". Biodata " + list.get(i).getName() + " | NIK: " + list.get(i).getNIK() + " | Jenis Kelamin: " + list.get(i).getGender());
-            System.out.println("NIM: " + list.get(i).getNIM());
-            System.out.println("Universitas: " + list.get(i).getAsal_universitas());
-            System.out.println("Fakultas: " + list.get(i).getFaculty());
-            System.out.println("Prodi: " + list.get(i).getMajor());
-            System.out.println("Email: " + list.get(i).getEmail_edu());
-
-            // Print New Line selain di akhir.
-            if(i < list.size() - 1)
+            // perform the selected operation based on user input
+            switch (operation)
             {
-                System.out.println();
+                case 1:
+                    System.out.print("Enter Name: ");
+                    name = scanner.next();
+                    System.out.print("Enter NIK: ");
+                    NIK = scanner.next();
+                    System.out.print("Enter Gender: ");
+                    gender = scanner.next();
+                    System.out.print("Enter NIM: ");
+                    NIM = scanner.next();
+                    System.out.print("Enter University: ");
+                    univ = scanner.next();
+                    System.out.print("Enter Major: ");
+                    major = scanner.next();
+                    System.out.print("Enter Faculty: ");
+                    faculty = scanner.next();
+                    System.out.print("Enter Email: ");
+                    email = scanner.next();
+                    crud.create(name, NIK, gender, NIM, univ, faculty, major, email);
+                    break;
+                case 2:
+                    crud.read();
+                    break;
+                case 3:
+                    // Search the NIM first, if there is then proceed to update the data, if not, then error handling.
+                    System.out.print("Enter NIM: ");
+                    find = scanner.next();
+                    index = crud.search(find);
+
+                    if (index == -1)
+                    {
+                        System.out.println("Data don't exist!\n");
+                    } else {
+                        System.out.print("Enter Nam: ");
+                        name = scanner.next();
+                        System.out.print("Enter NIK: ");
+                        NIK = scanner.next();
+                        System.out.print("Enter Gender: ");
+                        gender = scanner.next();
+                        System.out.print("Enter NIM: ");
+                        NIM = scanner.next();
+                        System.out.print("Enter University: ");
+                        univ = scanner.next();
+                        System.out.print("Enter Major: ");
+                        major = scanner.next();
+                        System.out.print("Enter Faculty: ");
+                        faculty = scanner.next();
+                        System.out.print("Enter Email: ");
+                        email = scanner.next();
+                        crud.update(index, name, NIK, gender, NIM, univ, faculty, major, email);
+                    }
+                    break;
+                case 4:
+                    System.out.print("Enter NIM: ");
+                    find = scanner.next();
+                    index = crud.search(find);
+                    crud.remove(index);
+                    break;
+                case 5:
+                    System.out.println("BYE.");
+                    break;
             }
-        }
+        } while (operation != 5);
     }
 }
