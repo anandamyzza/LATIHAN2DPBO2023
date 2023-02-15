@@ -46,4 +46,4 @@ Karena `Mahasiswa` adalah bagian dari suatu `SivitasAkademik` dan `SivitasAkadem
 ## Dokumentasi
 **Program Java**
 
-![Java program](Java/anjay.png)
+![Java program](Java/Output CMD.png)
