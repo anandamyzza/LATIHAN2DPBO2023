@@ -3,14 +3,14 @@ public class Human
     // Variabel Private Human.
     private String NIK;
     private String name;
-    private char gender;
+    private String gender;
     
     // Constructor Human.
     public Human()
     {
         this.NIK = "";
         this.name = "";
-        this.gender = '-';
+        this.gender = "";
     }
 
     public Human(String NIK, String name)
@@ -43,12 +43,12 @@ public class Human
     }
 
     // Setter & Getter Gender
-    public char getGender()
+    public String getGender()
     {
         return this.gender;
     }
 
-    public void setGender(char gender)
+    public void setGender(String gender)
     {
         this.gender = gender;
     }
