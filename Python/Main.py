@@ -52,7 +52,7 @@ while operation != 5:  # Perulangan yang akan berhenti jika operation bernilai 5
             print("\nData doesn't exist!\n")
         else:  # Jika selain bernilai -1.
             # Maka akan meminta user untuk update data pada NIM yang dicari.
-            print("Data exist! Insert the following to update the data!!")
+            print("Data exist! Insert the following to update the data!")
             name = input("Name       : ")
             NIK = input("NIK        : ")
             gender = input("Gender     : ")
