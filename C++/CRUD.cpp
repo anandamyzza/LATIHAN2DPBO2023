@@ -45,12 +45,12 @@ public:
                 {
                     cout << "\n";
                 }
-                cout << (i + 1) << ". Biodata " << data[i].getName() << " | NIK: " << data[i].getNIK() << " | Jenis Kelamin: " << data[i].getGender() << endl;
-                cout << "NIM         : " << data[i].getNIM() << endl;
-                cout << "Universitas : " << data[i].getAsal_universitas() << endl;
-                cout << "Fakultas    : " << data[i].getFaculty() << endl;
-                cout << "Prodi       : " << data[i].getMajor() << endl;
-                cout << "Email       : " << data[i].getEmail_edu() << endl
+                cout << (i + 1) << ". Biodata " << data[i].getName() << " | NIK: " << data[i].getNIK() << " | Gender: " << data[i].getGender() << endl;
+                cout << "NIM        : " << data[i].getNIM() << endl;
+                cout << "University : " << data[i].getAsal_universitas() << endl;
+                cout << "Faculty    : " << data[i].getFaculty() << endl;
+                cout << "Major      : " << data[i].getMajor() << endl;
+                cout << "Email      : " << data[i].getEmail_edu() << endl
                      << endl;
             }
         }
