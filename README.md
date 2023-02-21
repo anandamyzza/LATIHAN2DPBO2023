@@ -15,7 +15,7 @@ Terdapat 4 class di program ini, yaitu:
 4. **Class CRUD** _(C++, Java, Python)_ dan **Class Cread** _(PHP)_ merupakan class yang dibuat untuk metode Create (Menambahkan data, create()), Read (Menampilkan data, read()), Update (Mengubah data, update()), dan Delete (Menghapus data, remove()), serta 1 metode tambahan untuk membantu proses update dan delete yaitu search (Mencari data berdasarkan NIM, search()). Khusus untuk bahasa PHP, hanya memiliki metode create() dan read() saja dengan nama **Class Cread**. Class ini memiliki 1 atribut dinamakan data yang merupakan List of Object dari Class Mahasiswa.
 
 ### UML Desain
-![UML drawio (1)](https://user-images.githubusercontent.com/100767177/220304881-8392c3b2-3e95-4c6a-a174-1f645c092d68.png)
+![UML drawio](https://user-images.githubusercontent.com/100767177/220305241-610a3cbf-6829-4a9e-a2ad-73e30ce4195a.png)
 
 ## Alur Program
 C++, Java, dan Python memiliki alur program yang sama, yaitu sebagai berikut:
