@@ -1,49 +1,43 @@
 ## Janji
-Saya Ananda Myzza Marhelio NIM 2100702 mengerjakan soal Latihan 2
-dalam mata kuliah Desain Pemrograman Berorientasi Objek untuk keberkahanNya
-maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan.
-Aamiin.
+Saya Ananda Myzza Marhelio NIM 2100702 mengerjakan soal Latihan 2 dalam mata kuliah Desain Pemrograman Berorientasi Objek untuk keberkahanNya maka saya tidak melakukan kecurangan seperti yang telah dispesifikasikan. Aamiin.
 
-# Tugas LATIHAN1DPBO2023
+# Deskripsi Tugas Latihan 1 DPBO 2023
 Buatlah program berbasis OOP menggunakan bahasa pemrograman C++, Java, Python, dan PHP yang mengimplementasikan konsep Multi-level Inheritance  pada kelas - kelas tersebut:
-Mahasiswa: NIM, nama, jenis_kelamin, fakultas, prodi
-Human: NIK, nama, jenis_kelamin
-SivitasAkademik: asal_universitas, email_edu
-
-File README berisi desain program, penjelasan alur, dan dokumentasi saat program dijalankan (screenshot/screen record, pilih salah satu bahasa sebagai contoh)
+* **Mahasiswa**: NIM, nama, jenis_kelamin, fakultas, prodi
+* **Human**: NIK, nama, jenis_kelamin
+* **SivitasAkademik**: asal_universitas, email_edu
 
 ## Desain Program
-Desain yang saya buat menggunakan 3 Class:
-* Human
-* Sivitas Akademik
-* Mahasiswa
+Terdapat 4 class di program ini, yaitu:
+1. **Class Human** memiliki 3 atribut yaitu NIK (Nomor Induk Kependudukan), name (Nama), gender (Jenis Kelamin), dan 1 atribut tambahan di bahasa PHP, photo (Foto Profil). **Human** merupakan **_parent_** dari **SivitasAkademik** karena **SivitasAkademik** adalah sebuah komunitas yang pada dasarnya melibatkan manusia (Dosen, mahasiswa, staff, dll) sehingga memiliki objek yang sama dengan **Human** yaitu manusia. Setiap atribut pada class ini diberi setter dan getter.
+2. **Class SivitasAkademik** memiliki 2 atribut yaitu asal_universitas (Asal Universitas) dan email_edu (Email Pendidikan). Karena **SivitasAkademik** merupakan komunitas yang melibatkan manusia (**Human**), namun tidak semua manusia (**Human**) merupakan bagian dari suatu **SivitasAkademik**, sehingga **Class SivitasAkademik** menjadi **_child_** dari **Class Human**. Setiap atribut pada class ini diberi setter dan getter.
+3. **Class Mahasiswa** memiliki 3 atribut yaitu NIM (Nomor Induk Mahasiswa), faculty (Fakultas), dan major (Program Studi). **Mahasiswa** merupakan **_child_** dari **Class SivitasAkademik** karena menurut definisi dari **SivitasAkademik**, **Mahasiswa** yang memiliki objek yang sama dengan **Human** yaitu manusia, merupakan salah satu bagian dari komunitas (**SivitasAkademik**) tersebut.
+4. **Class CRUD** _(C++, Java, Python)_ dan **Class Cread** _(PHP)_ merupakan class yang dibuat untuk metode Create (Menambahkan data, create()), Read (Menampilkan data, read()), Update (Mengubah data, update()), dan Delete (Menghapus data, remove()), serta 1 metode tambahan untuk membantu proses update dan delete yaitu search (Mencari data berdasarkan NIM, search()). Khusus untuk bahasa PHP, hanya memiliki metode create() dan read() saja dengan nama **Class Cread**. Class ini memiliki 1 atribut dinamakan data yang merupakan List of Object dari Class Mahasiswa.
 
-### `Class Human` memiliki total tiga atribut:
-* **NIK** -> NIK manusia, `string`
-* **name** -> Nama manusia, `string`
-* **gender** -> Jenis kelamin manusia, `char`
-
-### `Class SivitasAkademik` memiliki total dua atribut dan mewarisi atribut dari `Class Human`:
-* **asal_universitas** -> Asal Universitas sivitas akademik, `string`
-* **email_edu** -> Email Edu sivitas akademik, `string`
-
-### `Class Mahasiswa` memiliki total tiga atribut dan mewarisi atribut dari `Class SivitasAkademik`:
-* **NIM** -> NIM mahasiswa, `string`
-* **faculty** -> Fakultas mahasiswa, `string`
-* **major** -> Program studi mahasiswa, `string`
-
-_Semua Class diatas dilengkapi dengan setter dan getternya_
-
-### Penjelasan multi-level inheritance
-
-`Class Human` -> `Class SivitasAkademik` -> `Class Mahasiswa`
-
-Karena `Mahasiswa` adalah bagian dari suatu `SivitasAkademik` dan `SivitasAkademik` juga merupakan bagian dari `Human`, `Human` bukan merupakan bagian dari `SivitasAkademik` karena tidak semua `Human` merupakan bagian dari `SivitasAkademik`. Maka pewarisannya adalah `Class Human` ke `Class SivitasAkademik` ke `Class Mahasiswa`.
+### UML
 
 ## Alur Program
-**semua program mempunyai alur yang sama, kecuali PHP karena inputan secara hardcore dari codenya**
+C++, Java, dan Python memiliki alur program yang sama, yaitu sebagai berikut:
+1. Pengguna akan dihadapi dengan menu yang terdiri dari 5 pilihan.
+
+![Screenshot_20230215_220851](https://user-images.githubusercontent.com/100767177/219066797-dac1d494-b1b9-4539-a832-dafe12df1267.png)
+
+2. Pilihan 1 akan menampilkan tampilan formulir yang harus diisi oleh pengguna.
+3. Pilihan 2 akan menampilkan data mahasiswa yang sudah diinput pengguna, terdapat tampilan lain apabila tidak ada data sama sekali.
+4. Pilihan 3, pengguna akan diminta menginput NIM mahasiswa yang ingin diubah datanya, terdapat tampilan lain apabila NIM yang dicari tidak ada.
+5. Pilihan 4, pengguna akan diminta menginput NIM mahasiswa yang ingin dihapus datanya, terdapat tampilan lain apabila NIM yang dicari tidak ada.
+6. Pilihan 5, program akan terhenti.
+7. Jika memilih selain pilihan 1-5, maka akan muncul tampilan `Invalid Operation.`.
+
+*Note: Di bahasa PHP, inputan dilakukan secara hardcode.*
 
 ## Dokumentasi
-**Program Java**
+#### 1. PHP
+![Dokumentasi](https://user-images.githubusercontent.com/100767177/220293924-baacd4e2-3ab8-416d-8468-3d752d3ad172.png)
 
-![Java program](https://github.com/anandamyzza/LATIHAN2DPBO2023/blob/main/Java/Output%20CMD.png?raw=true)
+#### 2. Java
+![Java](https://raw.githubusercontent.com/anandamyzza/LATIHAN2DPBO2023/main/Java/Output%20CMD.png)
+
+#### 2. Python
+![Dokumentasi_1](https://user-images.githubusercontent.com/100767177/220294339-ce994aad-20b5-4432-b563-aec86fbc7c3f.png)
+![Dokumentasi_2](https://user-images.githubusercontent.com/100767177/220294369-47d3e4d9-40b2-4bc5-9d9d-f84daa4a34a1.png)
